@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -24,11 +25,19 @@ public class controler {
     }
     
    @PutMapping("email")
-   public void postMethodName(@RequestBody emp entity) {
+   public void putMethodName(@RequestBody emp entity) {
        //TODO: process POST request
        
        ser.createmp(entity);
    }
-    
+    @PostMapping("login")
+    public String postMethodName(@RequestBody emp entity) {
+        //TODO: process POST request
+        System.out.println("Donknsf fjanfljn sdjgnjs dsgnslgnln");
+        if(ser.getemp(entity))
+    return  "Yes";
+    else
+    return "no";
+    }
   
 }
